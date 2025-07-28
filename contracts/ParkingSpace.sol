@@ -7,6 +7,5 @@ contract ParkingSpace is ERC20 {
     constructor() ERC20("ParkingSpace", "EDC") {
         _mint(msg.sender, 100);
     }
-    //test
-    //test2
+
 }

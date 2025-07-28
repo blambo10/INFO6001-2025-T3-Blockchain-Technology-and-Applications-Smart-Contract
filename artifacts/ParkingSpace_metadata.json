@@ -336,7 +336,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ParkingSpaces.sol": "ParkingSpace"
+			"contracts/ParkingSpace.sol": "ParkingSpace"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -382,12 +382,12 @@
 				"dweb:/ipfs/QmQVv7YeeKmaS11bg7YDTeeGDk6i7sV8LMMfohaLM4SiRu"
 			]
 		},
-		"contracts/ParkingSpaces.sol": {
-			"keccak256": "0x7a2ca027951f19ff88508d244c18c127c8a086fab726e64bfdac0f517b798bc4",
+		"contracts/ParkingSpace.sol": {
+			"keccak256": "0x1f33f5fdec553e7ef616f73da594377f10b2ffe703c652313e6e5b6aacfa0d20",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://94aac02a7829d70b74ff5a9a87a0ecaebf47d06d3c3e790ad44d1b0aee0c1321",
-				"dweb:/ipfs/Qmf4n1yQr8TwNxd4biwCawNH6TvKV9xk48SXnQfhWrsK2B"
+				"bzz-raw://ed5e90b483bf99fe9307aa076b26a5ff5ce4bb478606689175deabcb5eab49d4",
+				"dweb:/ipfs/QmTA9CC1yGhQJ5CibmveZ3tsxJoU43vsM2a6WCmpt6NUWV"
 			]
 		}
 	},

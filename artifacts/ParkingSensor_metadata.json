@@ -1,0 +1,323 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "occupied",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "durationInPreviousState",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "vehicleRegisteration",
+						"type": "string"
+					}
+				],
+				"name": "SensorReadingUpdate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "SensorRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_y",
+						"type": "uint256"
+					}
+				],
+				"name": "RegisterSensor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getSensorData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "x",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "y",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "occupied",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "modifiedTimeStamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "vehicleRegisteration",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "registered",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ParkingSensor.Sensor",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSpaces",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "sensors",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "occupied",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "modifiedTimeStamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "vehicleRegisteration",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "registered",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "spaces",
+				"outputs": [
+					{
+						"internalType": "contract ParkingSpace",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_occupied",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "_vehicleRegisteration",
+						"type": "string"
+					}
+				],
+				"name": "updateSensorReadings",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ParkingSensor.sol": "ParkingSensor"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts@4.4.0/token/ERC20/ERC20.sol": {
+			"keccak256": "0x53a0bb51b8a505e04aaf065de27c0e31cadf38194f8a9a6ec92b7bcd3c5826e6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d7d7019db0d8c1256995eb44b2aabf1189120c0bd01efa653e0eabdbc8cf4742",
+				"dweb:/ipfs/QmZRiFEksts7Z2r1xnHb9Jqu4udHyTM6tQVTCyFosMXQAy"
+			]
+		},
+		"@openzeppelin/contracts@4.4.0/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc1452b054778f1926419196ef12ae200758a4ee728df69ae1cd13e5c16ca7df7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb252ec7657ba7a91be688cbd263090aa5379e504f488a62d06198e0d630322",
+				"dweb:/ipfs/QmW56fDiDirhWfWiKrycXE5UY6tTNtFrYx39ipnSs8mkYb"
+			]
+		},
+		"@openzeppelin/contracts@4.4.0/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x842c66d5965ed0bf77f274732c2a93a7e2223d53171ec9cccc473bde75104ead",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8cc9f9a6d9c1e2ca9cd191840c0e6017d22bf99d88b368137e43c67f63d17d1c",
+				"dweb:/ipfs/Qmd3vUSxY4fRi4AUFMkerjrMFEKRLGVJUGFmxazR1wnPXP"
+			]
+		},
+		"@openzeppelin/contracts@4.4.0/utils/Context.sol": {
+			"keccak256": "0x7736c187e6f1358c1ea9350a2a21aa8528dec1c2f43b374a9067465a3a51f5d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4fd625dca17657403af518cc6c8ab5c54c58898cf6e912ca2e1b0f3194ad0405",
+				"dweb:/ipfs/QmQVv7YeeKmaS11bg7YDTeeGDk6i7sV8LMMfohaLM4SiRu"
+			]
+		},
+		"contracts/ParkingSensor.sol": {
+			"keccak256": "0xb5e04d7b8902909d4184c5efea26a6001d71ae79fef747bfd92694e54ddbfa26",
+			"urls": [
+				"bzz-raw://43b48d7bf9f005806580bec39fb942dbca4f2acf5c6c83a4d8a17677d39e2948",
+				"dweb:/ipfs/Qma48XLc6YaqRuz8jSpUZ31FGnTuXTqfDZeCXwFLsRpgo3"
+			]
+		},
+		"contracts/ParkingSpace.sol": {
+			"keccak256": "0xd5d61f5c4b72664eebc25f2e4ffebc7ab764f9a36e154c0d561678ad108d7e1e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c3f2e7a12d63ea93a1bcf2d3f7026e1bfc43a2ee89f0b1c55a59fcfd55ca22b2",
+				"dweb:/ipfs/QmYrKZsCsvLmPhgBMDZAmV1oxccYWpgEdiNvG5DbRvrSac"
+			]
+		}
+	},
+	"version": 1
+}

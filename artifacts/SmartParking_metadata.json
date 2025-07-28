@@ -1,0 +1,57 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/SmartParking.sol": "SmartParking"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ParkingSensor.sol": {
+			"keccak256": "0x50044fa96b0051424fc71dbd5004b244ed9b2cb32aa1ce0e7f8408bb90d4cdee",
+			"urls": [
+				"bzz-raw://384a5db5508eaf0aabcae13f019490642dbc9fae6d0b4ea4f530d8a7d59ee39b",
+				"dweb:/ipfs/QmapNNcG6KQ22hNuurNaUWDphe2VL9vUhQCr2mtQiG6Nq1"
+			]
+		},
+		"contracts/SmartParking.sol": {
+			"keccak256": "0x1c5eff5430f505becb3102c90392c43f0f8e90d9b8c7fcb3e46fcf044062b058",
+			"urls": [
+				"bzz-raw://7389a60eaf274dae76d259d229cc864f45fac4cb82dee35edd80dc76a5eb462b",
+				"dweb:/ipfs/QmdxoSJogMvmHFw2rom566rtAhm2Lc5kkpvZHaRGTsVjJ3"
+			]
+		}
+	},
+	"version": 1
+}

@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -383,11 +389,11 @@
 			]
 		},
 		"contracts/ParkingSpace.sol": {
-			"keccak256": "0x7d037e4a8261af3d53762d20cb21a66f7c1829f383d882fb42154760349037e3",
+			"keccak256": "0xa10f21e32e93068f4052356e3eac93efa102234050e5587d2a8637eec1f915b0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dd73c0b7c0b4e895c680153654b9ea75cd9ed55c56e163baf74a0788e76a5b87",
-				"dweb:/ipfs/QmYLmeVeNoiKtEdjkteCJJAsAgUVrTVCApcCzD5R1bbVpP"
+				"bzz-raw://ad3ed6f8e43cef2e80473d7b0ad6081c3e09a273b8d3aac436d1fbf247831a7d",
+				"dweb:/ipfs/QmcyYcbNBBx3nBna1kZHyLc1ugW1eWWSHsp3BLC64MChzJ"
 			]
 		}
 	},

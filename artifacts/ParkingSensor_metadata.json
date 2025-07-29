@@ -212,7 +212,7 @@
 				"name": "spaces",
 				"outputs": [
 					{
-						"internalType": "contract ParkingSpace",
+						"internalType": "contract ParkingSpaces",
 						"name": "",
 						"type": "address"
 					}
@@ -304,18 +304,18 @@
 			]
 		},
 		"contracts/ParkingSensor.sol": {
-			"keccak256": "0xb5e04d7b8902909d4184c5efea26a6001d71ae79fef747bfd92694e54ddbfa26",
+			"keccak256": "0x35c5ddab7f6d5ad8cff018fdc7928dbde0d169ab87935438d847970175f5fbd4",
 			"urls": [
-				"bzz-raw://43b48d7bf9f005806580bec39fb942dbca4f2acf5c6c83a4d8a17677d39e2948",
-				"dweb:/ipfs/Qma48XLc6YaqRuz8jSpUZ31FGnTuXTqfDZeCXwFLsRpgo3"
+				"bzz-raw://2a188c1e2058226b1ec332ea6430dd7b82d5dfdf6e7472ec8bd3aeb9b1757517",
+				"dweb:/ipfs/QmXbY4DVex6Te9d3vM3Gpb1csNTaRakX5CjaoQnbFi8Yco"
 			]
 		},
 		"contracts/ParkingSpace.sol": {
-			"keccak256": "0xd5d61f5c4b72664eebc25f2e4ffebc7ab764f9a36e154c0d561678ad108d7e1e",
+			"keccak256": "0x037c6934a2fe7435e08adb48467be01b1d16dad6b4c5cce8b975bf9642c7a37e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c3f2e7a12d63ea93a1bcf2d3f7026e1bfc43a2ee89f0b1c55a59fcfd55ca22b2",
-				"dweb:/ipfs/QmYrKZsCsvLmPhgBMDZAmV1oxccYWpgEdiNvG5DbRvrSac"
+				"bzz-raw://d42e647ec3869da2c267874d8a2fe1f9784964f18a738bb980c0ea5a8dc5220b",
+				"dweb:/ipfs/Qmb9nMf7inhU46h3cdSSCufgWTTmdUhDvgJ9Lk537C5YEb"
 			]
 		}
 	},

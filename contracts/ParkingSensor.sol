@@ -2,19 +2,14 @@ pragma solidity >=0.8.2 <0.9.0;
 
 import "./ParkingSpace.sol";
 
-contract ParkingSensor {
-    ParkingSpace public spaces; // State variable
+//Todo: work on fixing the token transfer as it keeps throwing error.
+//      also work on transfering to customer instead of msg.sender (msg.sender might be the customer, just check)
 
-    // using ParkingSpace for ParkingSpace.Sensor;
-    // mapping(string => Sensor) public sensors;
+contract ParkingSensor {
+    ParkingSpaces public spaces; // State variable
 
     constructor(){
-        //TODO: continue here and work on relationship between parking spaces and sensors,
-        //.     which will transfer to new owner (vehicleRegisteration) when new occupancy starts
-
-        //.     Note: while the constructore for ERC20 sets the owner to msg.sender initially,
-        //            it can be transfered to respective registerations
-        spaces = new ParkingSpace();
+        spaces = new ParkingSpaces(address(this));
     }
 
     struct Sensor{
@@ -44,7 +39,6 @@ contract ParkingSensor {
     }
 
     function getSpaces() public view returns (uint) {
-        
         return spaces.totalSupply();
     }
 
@@ -78,6 +72,13 @@ contract ParkingSensor {
         if(!_occupied && sensors[_id].occupied){
             previousStateVehicleRegisteration = sensors[_id].vehicleRegisteration;
             _vehicleRegisteration = "";
+            spaces.approve(address(this), 1);
+            require(spaces.transferFrom(msg.sender, address(this), 1));
+        }
+
+        if(_occupied){
+            spaces.approve(msg.sender, 1);
+            require(spaces.transferFrom(address(this), msg.sender, 1));   
         }
 
         sensors[_id].occupied = _occupied;

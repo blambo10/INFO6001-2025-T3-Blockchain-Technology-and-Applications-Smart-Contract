@@ -34,7 +34,7 @@
 					{
 						"indexed": false,
 						"internalType": "string",
-						"name": "vehicleRegisteration",
+						"name": "vehicleRegistration",
 						"type": "string"
 					}
 				],
@@ -147,7 +147,7 @@
 							},
 							{
 								"internalType": "string",
-								"name": "vehicleRegisteration",
+								"name": "vehicleRegistration",
 								"type": "string"
 							},
 							{
@@ -178,7 +178,7 @@
 					},
 					{
 						"internalType": "string",
-						"name": "_vehicleRegisteration",
+						"name": "_vehicleRegistration",
 						"type": "string"
 					}
 				],
@@ -219,7 +219,7 @@
 					"params": {
 						"_id": "Sensor id.",
 						"_occupied": "Current sensor state.",
-						"_vehicleRegisteration": "Registeration of vehicle currently occupying."
+						"_vehicleRegistration": "Registration of vehicle currently occupying."
 					}
 				}
 			},
@@ -390,11 +390,11 @@
 			]
 		},
 		"contracts/SmartParking.sol": {
-			"keccak256": "0x1a57b765ad054cdcfb6cd3f8a2e3d2a2d35ed97782ac94971e6b4d60142cb082",
+			"keccak256": "0xb7a048a94c61157db4255858be075290b45c03c54a9df46ad5e03b65178c1e3d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6823665d55399ed984ced84c86e92c1cac3441fe1bbb2afbac1072840fb409a7",
-				"dweb:/ipfs/QmR35UYMhH7sVmkSBy3oG1etEJ3qXdzWYjgdiExGXPQnUi"
+				"bzz-raw://fdc0dd7a77bcbcbbcb623d421f136adabd0bce8fdfbcb57a44fdb53de4257e1e",
+				"dweb:/ipfs/QmWNcgXsaGWegyLREhjA3fAGdeESn7ZGa6DUS3KZUYmXS5"
 			]
 		},
 		"contracts/helpers/GeoHelpers.sol": {

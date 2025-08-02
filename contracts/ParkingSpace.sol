@@ -50,6 +50,7 @@ contract ParkingSpaces is ERC721, Ownable {
         uint tokenId = _findNextVacantSpace();
         parkingSpaces[tokenId] = ParkingSpaceState.Occupied;
 
+        //[BL] emit event to advise the changing of parking space status.
         emit ParkingSpaceStatus(tokenId, 
                         ParkingSpaceState.Occupied);
 
@@ -82,6 +83,7 @@ contract ParkingSpaces is ERC721, Ownable {
     function vacateSpace(uint _tokenId) public onlyOwner {
         parkingSpaces[_tokenId] = ParkingSpaceState.Vacant;
         
+        //[BL] emit event to advise the changing of parking space status.
         emit ParkingSpaceStatus(_tokenId, 
                             ParkingSpaceState.Vacant);
     }

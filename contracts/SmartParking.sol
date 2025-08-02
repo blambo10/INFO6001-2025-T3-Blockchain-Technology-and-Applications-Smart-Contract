@@ -1,14 +1,20 @@
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.2 <0.9.0;
 
 import "./ParkingSpace.sol";
+import "./helpers/GeoHelpers.sol";
+import "./helpers/StringHelpers.sol";
 
 /**
  * @title SmartParking Contract
  * @dev This contract manages smartparking system and associated spaces
  */
 contract SmartParking {
-    
+    using GeoUtils for int;
+    using StringUtils for string;
     ParkingSpaces private spaces;
+    string constant VOID = "";
+    uint constant REG_MAX_CHARS = 7;
 
     constructor(){
         //[BL] Create parking spaces upon deployment of contract,
@@ -18,8 +24,8 @@ contract SmartParking {
 
     struct Sensor{
         uint id;
-        uint x;
-        uint y;
+        int x;
+        int y;
         bool occupied;
         uint modifiedTimeStamp;
         string vehicleRegisteration;
@@ -38,8 +44,8 @@ contract SmartParking {
     //[BL] Events are used to emit sensor information such as
     //.    registration and updated state to the front end.
     event SensorRegistered(uint id, 
-                           uint x,
-                           uint y);
+                           int x,
+                           int y);
     
     event SensorReadingUpdate(uint id, 
                               bool occupied, 
@@ -58,13 +64,14 @@ contract SmartParking {
      * @param _x Longitude location of sensor.
      * @param _y Latitude location of sensor.
      */
-    function RegisterSensor(uint _id, uint _x, uint _y) public {
+    function RegisterSensor(uint _id, int _x, int _y) public {
         require(!sensors[_id].registered, 
                 "Sensor Already Registered");
-        require((_x != 0), 
-                "geolocation x value invalid");
-        require((_y != 0), 
-                "geolocation y value invalid");
+        require(GeoUtils.validateCoordinates(_x, _y), "invalid coordinates"); 
+        // require((_x != 0), 
+        //         "geolocation x value invalid");
+        // require((_y != 0), 
+        //         "geolocation y value invalid");
 
         sensors[_id] = Sensor(
             {
@@ -73,7 +80,7 @@ contract SmartParking {
                 y: _y,
                 occupied: false,
                 modifiedTimeStamp: block.timestamp,
-                vehicleRegisteration: "",
+                vehicleRegisteration: VOID,
                 registered: true
             }
         );
@@ -92,29 +99,27 @@ contract SmartParking {
                                   string memory _vehicleRegisteration) 
                                   public IsSensorRegistered(_id) {
         uint durationInPreviousState = 0;
-        string memory previousStateVehicleRegisteration = "";
+        string memory previousStateVehicleRegisteration = sensors[_id].vehicleRegisteration;
 
         //[BL] vacate space and free token allocation if sensor detects vacant occupancy.
         if(!_occupied && sensors[_id].occupied){
-            _vehicleRegisteration = "";
-
-            previousStateVehicleRegisteration = sensors[_id].vehicleRegisteration;            
-            spaces.vacateSpace(reservations[previousStateVehicleRegisteration]);
-            delete reservations[previousStateVehicleRegisteration];
+            require(clearSensorOccupancy(_id));
+            _vehicleRegisteration = VOID;
         }
-
+       
         //[BL] reserve token allocation and associte with vehicle reg
         //     if sensor detects vacant occupancy.
         if(_occupied){
-            require(bytes(_vehicleRegisteration).length > 0, 
+            require(StringUtils.verifyCharacterLimit(REG_MAX_CHARS, _vehicleRegisteration),
                     "invalid vehicle registeration!");
             require(reservations[_vehicleRegisteration] == 0, 
                     "vehicle already holds an active reservation!");
 
+            require(clearSensorOccupancy(_id), "unable to clear sensor of previous occupant");
+
             uint spaceReservation = spaces.reserveSpace();
             require(spaceReservation > 0, 
                     "parking space allocation was not returned!");
-
 
             reservations[_vehicleRegisteration] = spaceReservation;
         }
@@ -129,10 +134,24 @@ contract SmartParking {
 
         sensors[_id].modifiedTimeStamp = block.timestamp;
 
+        //[BL] emiting event containing all attributes that will enable tracking duration occupied,
+        //.    this will provide the foundation for later extension and charging customers.
         emit SensorReadingUpdate(_id, 
                                 _occupied, 
                                 durationInPreviousState,
                                 previousStateVehicleRegisteration);
+    }
+
+    /**
+     * @notice Clear sensor occupancy
+     * @param _id Sensor id.
+     * @return bool indicating if clear was succesful.
+     */
+    function clearSensorOccupancy(uint _id) private returns (bool) {
+        string memory previousStateVehicleRegisteration = sensors[_id].vehicleRegisteration;            
+        spaces.vacateSpace(reservations[previousStateVehicleRegisteration]);
+        delete reservations[previousStateVehicleRegisteration];
+        return true;
     }
 
     /**

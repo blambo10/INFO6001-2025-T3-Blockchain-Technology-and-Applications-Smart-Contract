@@ -52,15 +52,15 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "int256",
 						"name": "x",
-						"type": "uint256"
+						"type": "int256"
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "int256",
 						"name": "y",
-						"type": "uint256"
+						"type": "int256"
 					}
 				],
 				"name": "SensorRegistered",
@@ -74,14 +74,14 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "int256",
 						"name": "_x",
-						"type": "uint256"
+						"type": "int256"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "int256",
 						"name": "_y",
-						"type": "uint256"
+						"type": "int256"
 					}
 				],
 				"name": "RegisterSensor",
@@ -126,14 +126,14 @@
 								"type": "uint256"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "int256",
 								"name": "x",
-								"type": "uint256"
+								"type": "int256"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "int256",
 								"name": "y",
-								"type": "uint256"
+								"type": "int256"
 							},
 							{
 								"internalType": "bool",
@@ -192,7 +192,7 @@
 			"details": "This contract manages smartparking system and associated spaces",
 			"kind": "dev",
 			"methods": {
-				"RegisterSensor(uint256,uint256,uint256)": {
+				"RegisterSensor(uint256,int256,int256)": {
 					"params": {
 						"_id": "Sensor id.",
 						"_x": "Longitude location of sensor.",
@@ -229,7 +229,7 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"RegisterSensor(uint256,uint256,uint256)": {
+				"RegisterSensor(uint256,int256,int256)": {
 					"notice": "Function to register sensor with contract."
 				},
 				"getParkingReservation(uint256)": {
@@ -382,18 +382,35 @@
 			]
 		},
 		"contracts/ParkingSpace.sol": {
-			"keccak256": "0x2ad80eaf9179a239e19975370bd4ee638f8f89e5521107e5ca4ce8a07c7dae2f",
+			"keccak256": "0x0532fffed5459c9d7674dfb94fdc20305da77c17773138a708dd80c668d7feda",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8f6b6e8d18d017b39bf54545308e54166f5eca404d2450cc48b66a35b1f4909e",
-				"dweb:/ipfs/QmewR9ddhdm5mR3TNJGH2TXArxjBHyoPbHSFYWExmcLzSB"
+				"bzz-raw://f0692127a30a3811ced8eea60e3a5ad4b580b6a5268d98068fc291a427a3af86",
+				"dweb:/ipfs/QmcKQq5hC5wU5LSiV3ac6fne3oicGgXKnWi5r2MmCVQf2W"
 			]
 		},
 		"contracts/SmartParking.sol": {
-			"keccak256": "0x228fcee5858434942c6319287665164d4a7803b0a0894bf53869d55c8c2d12dc",
+			"keccak256": "0x1a57b765ad054cdcfb6cd3f8a2e3d2a2d35ed97782ac94971e6b4d60142cb082",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://da1a99106fdc76571f9d36c06f77b2875ff4d302c19cd84d7b03e2c9e8b171e3",
-				"dweb:/ipfs/QmT2VTMeYW7bd9cusMcrR3G5J1XdMK3KzqF1PaqwoiyQRy"
+				"bzz-raw://6823665d55399ed984ced84c86e92c1cac3441fe1bbb2afbac1072840fb409a7",
+				"dweb:/ipfs/QmR35UYMhH7sVmkSBy3oG1etEJ3qXdzWYjgdiExGXPQnUi"
+			]
+		},
+		"contracts/helpers/GeoHelpers.sol": {
+			"keccak256": "0xda2783ab10ceec28ffa7045290d5f0abe707ea4649927b4c59e22f2fc8070107",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://088bb64d4490585f6d4eb473cf84993cee1d7fad2a8aebeb4466f3c9d79550dc",
+				"dweb:/ipfs/QmRaDPbXeaqwQn4quAK2qeyGHyMyX2RVm41i49BPNcy8Zp"
+			]
+		},
+		"contracts/helpers/StringHelpers.sol": {
+			"keccak256": "0x4f6bee261d5891ce6e34d121780dec6382be63fb2b38c7e0e805106c406f0dcf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b78dee1da52818435b76d339e1859b86279d8d4f86cb1ec211d3299389c77c5b",
+				"dweb:/ipfs/Qmaif786NNd3qPBB8KiVw6LvvvAtZbYvykaFGZrPPcUJS1"
 			]
 		}
 	},

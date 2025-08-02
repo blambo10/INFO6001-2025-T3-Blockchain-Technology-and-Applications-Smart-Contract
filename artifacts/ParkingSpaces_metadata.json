@@ -913,11 +913,11 @@
 			]
 		},
 		"contracts/ParkingSpace.sol": {
-			"keccak256": "0x2ad80eaf9179a239e19975370bd4ee638f8f89e5521107e5ca4ce8a07c7dae2f",
+			"keccak256": "0x0532fffed5459c9d7674dfb94fdc20305da77c17773138a708dd80c668d7feda",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8f6b6e8d18d017b39bf54545308e54166f5eca404d2450cc48b66a35b1f4909e",
-				"dweb:/ipfs/QmewR9ddhdm5mR3TNJGH2TXArxjBHyoPbHSFYWExmcLzSB"
+				"bzz-raw://f0692127a30a3811ced8eea60e3a5ad4b580b6a5268d98068fc291a427a3af86",
+				"dweb:/ipfs/QmcKQq5hC5wU5LSiV3ac6fne3oicGgXKnWi5r2MmCVQf2W"
 			]
 		}
 	},

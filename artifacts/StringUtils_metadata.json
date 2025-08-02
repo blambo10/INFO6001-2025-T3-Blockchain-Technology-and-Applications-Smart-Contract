@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/helpers/StringHelpers.sol": {
-			"keccak256": "0x4f6bee261d5891ce6e34d121780dec6382be63fb2b38c7e0e805106c406f0dcf",
+			"keccak256": "0xb59426607cc4e12172b2a2f27eee9111ddfde7c98e9d43440366d2332bb28e38",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b78dee1da52818435b76d339e1859b86279d8d4f86cb1ec211d3299389c77c5b",
-				"dweb:/ipfs/Qmaif786NNd3qPBB8KiVw6LvvvAtZbYvykaFGZrPPcUJS1"
+				"bzz-raw://ee87e0226791738f8e80167eb28a20ae45e8a46830ae7ebed596ec2743c21cd3",
+				"dweb:/ipfs/Qmd1EJsqtrLnUh9HkkgYYkrXebRYB53bXNW9d9ZWMT2Yxm"
 			]
 		}
 	},
